@@ -297,6 +297,295 @@
         .check-row { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
         .check-row:last-child { border-bottom: none; }
         input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--primary-dark); cursor: pointer; }
+
+        /* ===== 기록/달력 탭 완성본: 복부둘레 + FLACC + 실제 달력 ===== */
+        .record-complete-card {
+            border-radius: 22px;
+            padding: 20px 18px;
+        }
+        .record-complete-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .record-complete-card label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 8px;
+        }
+        .record-complete-card input,
+        .record-complete-card select,
+        .record-complete-card textarea {
+            min-height: 48px;
+            border-radius: 12px;
+            border: 1.5px solid #E5E7EB;
+            background: #FFFFFF;
+            font-size: 14px;
+        }
+
+        .flacc-complete {
+            background: #FFF1F5;
+            border: 1.5px solid #FBCFE8;
+            border-radius: 18px;
+            padding: 20px 16px;
+            margin: 18px 0;
+        }
+        .flacc-complete h3 {
+            margin: 0 0 5px;
+            text-align: center;
+            color: #DB2777;
+            font-size: 18px;
+            font-weight: 900;
+        }
+        .flacc-complete .flacc-sub {
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        .flacc-face-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+        .flacc-face-card {
+            border: 1.5px solid transparent;
+            background: #FFFFFF;
+            border-radius: 14px;
+            min-height: 101px;
+            padding: 10px 3px;
+            text-align: center;
+            font-weight: 800;
+            color: #B9BDC5;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .flacc-face-card.active {
+            border-color: #EC4899;
+            background: #FFF7FA;
+            color: #DB2777;
+            box-shadow: 0 8px 18px rgba(236,72,153,.13);
+        }
+        .flacc-face-card .emoji {
+            font-size: 25px;
+            line-height: 1;
+            margin-bottom: 7px;
+        }
+        .flacc-face-card .range {
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .flacc-face-card .txt {
+            font-size: 11px;
+            line-height: 1.25;
+        }
+        .flacc-gradient {
+            height: 6px;
+            border-radius: 99px;
+            background: linear-gradient(90deg,#22C55E 0%,#AAD84A 32%,#F59E0B 55%,#F97316 72%,#B91C1C 100%);
+            margin: 2px 0 7px;
+        }
+        .flacc-label-row {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            font-size: 11px;
+            margin-bottom: 13px;
+        }
+        .flacc-label-row span:nth-child(1){ color:#9CA3AF; text-align:left; }
+        .flacc-label-row span:nth-child(2){ color:#F59E0B; text-align:center; }
+        .flacc-label-row span:nth-child(3){ color:#DC2626; text-align:right; }
+        .flacc-score-row {
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            gap: 5px;
+            margin-bottom: 13px;
+        }
+        .flacc-score-btn {
+            height: 40px;
+            border-radius: 9px;
+            border: 1px solid #E5E7EB;
+            background: #FFFFFF;
+            color: #8B95A1;
+            font-size: 14px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .flacc-score-btn.active {
+            color: #FFFFFF;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0,0,0,.17);
+        }
+        .flacc-result-box {
+            border-radius: 14px;
+            padding: 15px 18px;
+            display: flex;
+            align-items: center;
+            gap: 17px;
+        }
+        .flacc-result-number {
+            min-width: 54px;
+            font-size: 42px;
+            line-height: 1;
+            font-weight: 950;
+            text-align: center;
+        }
+        .flacc-result-title {
+            font-size: 16px;
+            font-weight: 900;
+            margin-bottom: 5px;
+        }
+        .flacc-result-msg {
+            font-size: 12px;
+            color: #6B7280;
+            line-height: 1.35;
+        }
+
+        .real-calendar-complete {
+            border-radius: 22px;
+            padding: 22px 18px 24px;
+        }
+        .real-calendar-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+        .real-calendar-note {
+            font-size: 12px;
+            color: #9CA3AF;
+            text-align: right;
+            margin: -2px 0 10px;
+        }
+        .real-calendar-nav {
+            display: grid;
+            grid-template-columns: 40px 1fr 40px;
+            align-items: center;
+            margin: 8px 0 18px;
+        }
+        .real-calendar-month {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 900;
+            color: #111827;
+        }
+        .real-calendar-arrow {
+            border: 0;
+            background: transparent;
+            color: #9CA3AF;
+            font-size: 24px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        .real-calendar-weekdays,
+        .real-calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+        }
+        .real-calendar-weekdays div {
+            font-size: 12px;
+            color: #9CA3AF;
+            font-weight: 800;
+            padding: 10px 0 12px;
+        }
+        .real-calendar-day {
+            min-height: 56px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-size: 15px;
+            color: #111827;
+            font-weight: 500;
+        }
+        .real-calendar-day.muted {
+            color: #D1D5DB;
+        }
+        .real-calendar-day.today {
+            background: #F59E0B;
+            color: #FFFFFF;
+            font-weight: 900;
+        }
+        .real-calendar-day.has-log::after {
+            content: "";
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #22C55E;
+            position: absolute;
+            left: 50%;
+            bottom: 9px;
+            transform: translateX(-50%);
+        }
+        .real-calendar-day.today.has-log::after,
+        .real-calendar-day.today::after {
+            content: "";
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            position: absolute;
+            left: 50%;
+            bottom: 9px;
+            transform: translateX(-50%);
+        }
+        .history-record-extra {
+            font-weight: 800;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+
+        .app-btn {
+            position: relative;
+            z-index: 5;
+            touch-action: manipulation;
+            user-select: none;
+        }
+        .record-action-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .small-action-btn {
+            border: none;
+            border-radius: 8px;
+            padding: 7px 10px;
+            font-size: 11px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        .delete-log-btn {
+            background: #FEF2F2;
+            color: #DC2626;
+            border: 1px solid #FECACA;
+        }
+        .cancel-edit-btn {
+            display: none;
+            background: #6B7280 !important;
+            margin-top: 8px;
+        }
+
+
+        #history-box, #reset-all-btn, .delete-log-btn {
+            position: relative;
+            z-index: 50;
+            pointer-events: auto !important;
+            touch-action: manipulation;
+        }
+        #reset-all-btn {
+            margin-bottom: 90px !important;
+            min-height: 48px;
+        }
+        .delete-log-btn {
+            min-height: 34px;
+        }
+
     </style>
 </head>
 <body>
@@ -306,7 +595,6 @@
         <div class="header-top">
             <div class="header-title">
                 <h1 onclick="navigate('home')">우리 아이 건강 지킴이</h1>
-                <p>퇴원 후 우리 아이의 안전한 회복을 위한 맞춤 관리 앱</p>
             </div>
             <div class="header-icon"><i class="fa-solid fa-heart-pulse" style="color: var(--emergency);"></i></div>
         </div>
@@ -319,8 +607,8 @@
                 <span class="priority-tag">필독 수칙</span>
                 <div class="card-title" style="color: var(--emergency);"><i class="fa-solid fa-triangle-exclamation" style="color:var(--emergency)"></i> 안전 최우선 활동 금지</div>
                 <div style="font-size: 13px; line-height: 1.6; font-weight: 400;">
-                    열이 내려도 간과 비장은 회복 중입니다!<br>
-                    <strong>발병 후 3주간 뛰기, 점프, 자전거는 절대 금지!!</strong>
+                    열이 내려도 간과 비장은 회복 중입니다.<br>
+                    <strong>3주간 뛰기, 점프, 자전거는 절대 금지!!</strong>
                 </div>
             </div>
 
@@ -331,8 +619,19 @@
                     🩺 <strong>합병증:</strong> 간비장비대
                 </div>
                 <div class="highlight-box">
-                    <strong>오늘의 핵심 미션:</strong> 복부에 충격이 가지 않도록 과격한 활동이나 침대 위 점프를 제한해 주세요!
+                    <strong>오늘의 핵심 미션:</strong> 복부에 충격이 가지 않도록 과격한 활동은 제한해 주세요!
                 </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-title"><i class="fa-solid fa-film"></i> 앰버와 함께 알아보기</div>
+                <div style="font-size:13px; color:#6B7280; line-height:1.6; margin-bottom:12px;">
+                    왜 배가 빵빵했는지, 왜 뛰면 안 되는지 앰버와 함께 알아봐요!
+                </div>
+                <a href="https://drive.google.com/file/d/12F-jtJau0qRPAdaGLfho1C4uvWBxoJh-/view?usp=sharing" target="_blank" class="app-btn" style="display:block; text-align:center; text-decoration:none;">
+                    ▶ 교육 영상 보기
+                </a>
             </div>
 
             <div class="quick-grid">
@@ -351,7 +650,7 @@
             <div class="card">
                 <div class="card-title"><i class="fa-solid fa-circle-info"></i> 전염성 단핵구증이란?</div>
                 <div style="font-size: 13px; line-height: 1.6; color: #4B5563;">
-                    EBV(엡스타인-바 바이러스) 감염병입니다. 감기 증상과 함께 인후통, 피로감이 오며, 면역계가 반응하면서 간과 비장이 일시적으로 부어오를 수 있습니다.
+                    EBV(엡스타인-바 바이러스) 급성 감염성 질환입니다. 감기 증상과 함께 인후통, 피로감이 오며, 면역계가 반응하면서 간과 비장이 일시적으로 부어오를 수 있습니다.
                 </div>
             </div>
             <div class="card">
@@ -372,14 +671,45 @@
                     ⚠️ <strong>중요:</strong> 소아는 회복이 빠르지만, 겉보기에 건강해 보여도 내부 비장은 여전히 커진 상태일 수 있어 방심은 금물입니다.
                 </div>
             </div>
+            <div class="card" style="border:1.5px solid var(--primary);">
+                <div class="card-title"><i class="fa-solid fa-film"></i> 아이와 함께 보는 교육 영상</div>
+                <div style="font-size:13px; color:#6B7280; line-height:1.6; margin-bottom:12px;">
+                </div>
+                <a href="https://drive.google.com/file/d/12F-jtJau0qRPAdaGLfho1C4uvWBxoJh-/view?usp=sharing" target="_blank" class="app-btn" style="display:block; text-align:center; text-decoration:none;">
+                    ▶ 영상 보기
+                </a>
+            </div>
+
+
         </section>
 
-        <section id="page-lab" class="page">
-            <div class="card"><div class="card-title">🧪 EBV 양성 (Positive)</div><p style="font-size: 13px; margin:0; line-height: 1.5; color:#4B5563;">원인 바이러스가 검출되었습니다. 현재 몸속에서 감염을 앓고 있거나 매우 최근에 감염되었음을 확진하는 지표입니다.</p></div>
-            <div class="card"><div class="card-title">🧪 비정형 림프구 증가</div><p style="font-size: 13px; margin:0; line-height: 1.5; color:#4B5563;">바이러스에 대항하기 위해 활성화된 백혈구입니다. 몸이 열심히 싸우고 있다는 정상적인 면역 시스템 반응입니다.</p></div>
-            <div class="card"><div class="card-title">🧪 AST / ALT 수치 상승</div><p style="font-size: 13px; margin:0; line-height: 1.5; color:#4B5563;">간세포의 염증 정도를 뜻합니다. 감염 기간 일시적으로 치솟으나 충분히 쉬면 정상화되며 외래 추적 혈액검사로 최종 확인합니다.</p></div>
-            <div class="card"><div class="card-title">🧪 간비장비대 확인</div><p style="font-size: 13px; margin:0; line-height: 1.5; color:#4B5563;">초음파나 촉진을 통해 확인된 장기 부종입니다. 비장이 커진 상태가 본 앱 관리의 핵심 목적입니다.</p></div>
-        </section>
+        
+<section id="page-lab" class="page">
+    <div class="card">
+        <div class="card-title">🧪 EBV 양성 (Positive)</div>
+        <div style="background:#F0FDF4; color:#166534; padding:8px 12px; border-radius:10px; font-size:12px; font-weight:600; margin-bottom:10px;">🟢 정상 기준: 음성 (Negative)</div>
+        <p style="font-size:13px; margin:0; line-height:1.6; color:#4B5563;">EBV 바이러스가 검출된 상태로 현재 몸속에서 감염을 앓고 있거나 매우 최근에 감염되었음을 확인하는 지표입니다.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-title">🧪 비정형 림프구 증가</div>
+        <div style="background:#F0FDF4; color:#166534; padding:8px 12px; border-radius:10px; font-size:12px; font-weight:600; margin-bottom:10px;">🟢 정상 기준: 0~2%</div>
+        <p style="font-size:13px; margin:0; line-height:1.6; color:#4B5563;">바이러스에 대항하기 위해 활성화된 백혈구입니다. 몸이 열심히 싸우고 있다는 면역 시스템 반응입니다.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-title">🧪 AST / ALT 수치 상승</div>
+        <div style="background:#F0FDF4; color:#166534; padding:8px 12px; border-radius:10px; font-size:12px; font-weight:600; margin-bottom:10px;">🟢 정상 기준: AST, ALT 40 U/L 이하</div>
+        <p style="font-size:13px; margin:0; line-height:1.6; color:#4B5563;">간세포의 염증 정도를 뜻합니다. 감염 기간 일시적으로 상승할 수 있으나 충분히 쉬면 점차 정상 범위로 회복되며 외래 추적 혈액검사로 확인할 수 있습니다.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-title">🧪 간비장비대 확인</div>
+        <div style="background:#F0FDF4; color:#166534; padding:8px 12px; border-radius:10px; font-size:12px; font-weight:600; margin-bottom:10px;">🟢 정상 기준: 간·비장 비대 없음</div>
+        <p style="font-size:13px; margin:0; line-height:1.6; color:#4B5563;">검사 및 진찰 결과 간과 비장이 커져 있는 것이 확인되었습니다. 회복되면서 정상 크기로 돌아오지만, 회복되기 전까지는 뛰기·점프·충격이 있는 활동을 피해야 합니다.</p>
+    </div>
+</section>
+
 
         <section id="page-care" class="page">
             <div class="card">
@@ -425,13 +755,13 @@
                 <div style="font-size: 13px; line-height: 1.6; color:#4B5563;">
                     • <strong>권장:</strong> 흰죽, 맑은국, 두부, 바나나, 삶은 감자 등 소화가 쉬운 음식<br>
                     • <strong>제한:</strong> 기름진 튀김, 자극적인 인스턴트식품<br>
-                    • <strong>전염차단:</strong> 침으로 옮으므로 가족 간에도 수저, 칫솔, 물컵은 철저히 따로 사용합니다.
+                    • <strong>전염차단:</strong> 침으로 옮으므로 가족 간에도 수저, 칫솔, 물컵은 철저히 따로 사용하세요!
                 </div>
             </div>
             <div class="card">
                 <div class="card-title"><i class="fa-solid fa-school"></i> 등원 및 단체생활</div>
                 <div style="font-size: 13px; color: #4B5563; line-height: 1.6;">
-                    어린이집/유치원에 가더라도 뛰어놀기, 점프, 친구들과 엉겨 붙는 활동은 제한해야 합니다. 담임 선생님께 해당 가이드를 명확히 전달해 주세요.
+                    어린이집/유치원에 가더라도 뛰어놀기, 점프, 친구들과 엉겨 붙는 활동은 제한해야 해요. 담임 선생님께 해당 가이드를 명확히 전달해 주세요.
                 </div>
             </div>
         </section>
@@ -517,17 +847,38 @@
             </div>
         </section>
 
-        <section id="page-faq" class="page">
+                <section id="page-faq" class="page">
             <div class="card">
                 <div class="card-title"><i class="fa-solid fa-circle-question"></i> 자주 묻는 질문 해결 센터</div>
                 
                 <div class="acc-item">
-                    <div class="acc-trigger" onclick="toggleFaq(this)">Q. 다른 형제자매에게 전염되나요? <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="acc-panel">해당 질환은 주로 침(타액)을 통해 긴밀히 전파됩니다. 완치 판정 전까지 컵, 빨대, 숟가락, 수저, 칫솔을 철저히 분리하고 손 씻기를 생활화해야 합니다.</div>
+                    <div class="acc-trigger" onclick="toggleFaq(this)">Q. 언제부터 다시 뛰어놀 수 있나요? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="acc-panel">비장이 커져 있는 동안에는 충격에 의해 비장 파열 위험이 있습니다. 일반적으로 발병 후 최소 3주 동안은 뛰기, 점프, 자전거, 킥보드, 축구, 태권도 등의 활동을 피해야 합니다. 이후에도 반드시 외래 진료에서 의료진의 확인 후 활동을 점차 늘려주세요.</div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc-trigger" onclick="toggleFaq(this)">Q. 목욕이나 수영은 해도 되나요? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="acc-panel">집에서 가볍게 샤워하거나 목욕하는 것은 가능합니다. 다만 몸 상태가 좋지 않거나 어지러움이 있다면 보호자와 함께 해주세요. 수영장은 체력 소모가 크고 다른 아이들과 부딪힐 수 있어 의료진이 허락할 때까지 미루는 것이 좋습니다.</div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc-trigger" onclick="toggleFaq(this)">Q. 예방접종은 어떻게 하나요? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="acc-panel">우리 아이는 IVIG 치료를 받았기 때문에 일부 생백신(MMR, 수두, 일본뇌염 생백신)은 일정 기간 접종을 연기해야 할 수 있습니다. 일반적으로 IVIG 치료 후 약 11개월 뒤 접종을 권장하지만, 정확한 일정은 외래 진료 시 의료진과 반드시 상담해 주세요.</div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc-trigger" onclick="toggleFaq(this)">Q. 형제자매에게도 옮을 수 있나요? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="acc-panel">EBV는 주로 침(타액)을 통해 전파됩니다. 함께 사용하는 컵, 빨대, 숟가락, 칫솔은 따로 사용해 주세요. 손 씻기와 기침 예절을 잘 지키면 전파 위험을 줄일 수 있습니다.</div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc-trigger" onclick="toggleFaq(this)">Q. 열이 다시 나면 어떻게 해야 하나요? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="acc-panel">퇴원 후에도 일시적으로 미열이 있을 수 있습니다. 하지만 38℃ 이상의 열이 반복되거나, 열과 함께 복통이 심해지거나 아이가 축 처진다면 병원에 연락하거나 진료를 받아야 합니다.</div>
+                </div>
+                <div class="acc-item">
+                    <div class="acc-trigger" onclick="toggleFaq(this)">Q. 음식은 무엇을 조심해야 하나요? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="acc-panel">간이 회복되는 동안에는 기름진 음식, 튀김류, 매우 자극적인 음식은 줄이는 것이 좋습니다. 죽, 국, 과일, 두부 등 소화가 쉬운 음식을 충분한 수분과 함께 섭취하도록 도와주세요. 억지로 먹이기보다는 조금씩 자주 먹는 것이 좋습니다.</div>
                 </div>
                 <div class="acc-item">
                     <div class="acc-trigger" onclick="toggleFaq(this)">Q. 입원 초기와 퇴원 때 왜 진단명이 바뀌었나요? <i class="fa-solid fa-chevron-down"></i></div>
-                    <div class="acc-panel">초기에는 일반 인후염이나 독감 증상과 구별이 어렵습니다. 며칠 뒤 혈액 내 비정형 림프구 수치 상승과 EBV 특이 항체 검사 결과가 최종 취합되면서 전염성 단핵구증으로 정밀 확진되는 것입니다.</div>
+                    <div class="acc-panel"> 초기부터 5일 이상 지속되는 발열과 경부 림프절 비대, 백혈구 증가 소견을 보였습니다. 이러한 증상들은 가와사키병에서도 흔하게 나타나는 증상이며, 특히 소아에서 원인 불명의 발열이 지속될 경우 가와사키병을 우선적으로 고려하는 경우가 많습니다.
+그러나 이후 추가 검사에서 비정형 림프구 증가, EBV 항체 양성, 간비장비대, 간수치 상승이 확인되었고, 이는 감염성 단핵구증의 특징적인 소견이므로 최종적으로 감염성 단핵구증 및 간염으로 진단이 변경되었습니다</div>
                 </div>
                 <div class="acc-item">
                     <div class="acc-trigger" onclick="toggleFaq(this)">Q. 아이 배를 만지면 덩어리 같은 게 느껴집니다. <i class="fa-solid fa-chevron-down"></i></div>
@@ -539,15 +890,21 @@
                 </div>
             </div>
         </section>
-
         <section id="page-record" class="page">
-            <div class="card">
-                <div class="card-title"><i class="fa-solid fa-pen-line"></i> 오늘의 일일 건강 로그 작성</div>
+            <div class="card record-complete-card">
+                <div class="card-title">📋 오늘의 일일 건강 로그 작성</div>
                 <form id="health-form">
-                    <div class="form-box">
-                        <label>체온 기록 (°C)</label>
-                        <input type="number" step="0.1" id="in-temp" placeholder="예: 36.6">
+                    <div class="record-complete-grid">
+                        <div class="form-box">
+                            <label>🌡️ 체온 (°C)</label>
+                            <input type="number" step="0.1" id="in-temp" placeholder="예: 36.6">
+                        </div>
+                        <div class="form-box">
+                            <label>📏 복부 둘레 (cm)</label>
+                            <input type="number" step="0.1" id="in-abdomen" placeholder="예: 48.0">
+                        </div>
                     </div>
+
                     <div class="form-box">
                         <label>종합 상태 모니터링</label>
                         <select id="in-status">
@@ -556,29 +913,87 @@
                             <option value="주의">🔴 악화</option>
                         </select>
                     </div>
+
+                    <div class="flacc-complete">
+                        <h3>아픈 정도를 골라주세요! FLACC</h3>
+                        <div class="flacc-sub">숫자를 눌러 아이의 통증 정도를 기록해 주세요</div>
+
+                        <div class="flacc-face-row">
+                            <button type="button" class="flacc-face-card active" data-face-group="0" onclick="setFlaccPain(0)">
+                                <div class="emoji">😊</div><div class="range">0</div><div class="txt">아프지<br>않아요</div>
+                            </button>
+                            <button type="button" class="flacc-face-card" data-face-group="1" onclick="setFlaccPain(1)">
+                                <div class="emoji">🥺</div><div class="range">1~3</div><div class="txt">조금<br>아파요</div>
+                            </button>
+                            <button type="button" class="flacc-face-card" data-face-group="4" onclick="setFlaccPain(4)">
+                                <div class="emoji">😣</div><div class="range">4~6</div><div class="txt">꽤<br>아파요</div>
+                            </button>
+                            <button type="button" class="flacc-face-card" data-face-group="7" onclick="setFlaccPain(7)">
+                                <div class="emoji">😭</div><div class="range">7~9</div><div class="txt">많이<br>아파요</div>
+                            </button>
+                            <button type="button" class="flacc-face-card" data-face-group="10" onclick="setFlaccPain(10)">
+                                <div class="emoji">🤯</div><div class="range">10</div><div class="txt">너무<br>아파요</div>
+                            </button>
+                        </div>
+
+                        <div class="flacc-gradient"></div>
+                        <div class="flacc-label-row">
+                            <span>약한 통증 (0~3점)</span>
+                            <span>보통 통증 (4~6점)</span>
+                            <span>심한 통증 (7~10점)</span>
+                        </div>
+
+                        <div class="flacc-score-row" id="flacc-score-row">
+                            <button type="button" class="flacc-score-btn" onclick="setFlaccPain(0)">0</button>
+                            <button type="button" class="flacc-score-btn" onclick="setFlaccPain(1)">1</button>
+                            <button type="button" class="flacc-score-btn" onclick="setFlaccPain(2)">2</button>
+                            <button type="button" class="flacc-score-btn" onclick="setFlaccPain(3)">3</button>
+                            <button type="button" class="flacc-score-btn" onclick="setFlaccPain(4)">4</button>
+                            <button type="button" class="flacc-score-btn" onclick="setFlaccPain(5)">5</button>
+                            <button type="button" class="flacc-score-btn" onclick="setFlaccPain(6)">6</button>
+                            <button type="button" class="flacc-score-btn" onclick="setFlaccPain(7)">7</button>
+                            <button type="button" class="flacc-score-btn" onclick="setFlaccPain(8)">8</button>
+                            <button type="button" class="flacc-score-btn" onclick="setFlaccPain(9)">9</button>
+                            <button type="button" class="flacc-score-btn" onclick="setFlaccPain(10)">10</button>
+                        </div>
+
+                        <div class="flacc-result-box" id="flacc-result-box">
+                            <div class="flacc-result-number" id="flacc-result-number">0</div>
+                            <div>
+                                <div class="flacc-result-title" id="flacc-result-title">통증 없음</div>
+                                <div class="flacc-result-msg" id="flacc-result-msg">아이가 편안한 상태예요 😊</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-box">
                         <label>오늘의 한 줄 기록장 / 외래 때 질문할 메모</label>
                         <textarea id="in-memo" placeholder="예: 오늘 죽 반 그릇 비움. 복통 호소 없음. 외래 때 어린이집 등원 시점 질문할 것." rows="3"></textarea>
                     </div>
-                    <button type="button" class="app-btn" onclick="addHealthLog()">모바일 기기에 기록 저장</button>
+                    <button type="button" class="app-btn" id="save-log-btn" onclick="addHealthLog()">모바일 기기에 기록 저장</button>
+                    
                 </form>
             </div>
 
-            <div class="card">
-                <div class="card-title"><i class="fa-solid fa-calendar-days"></i> 회복 관리 달력 상태판</div>
-                <div style="font-size:12px; color:#6B7280; text-align:right; margin-bottom:5px;">기록 시 하단에 유기적 점 표시</div>
-                <div class="calendar-grid">
-                    <div class="cal-header">일</div><div class="cal-header">월</div><div class="cal-header">화</div><div class="cal-header">수</div><div class="cal-header">목</div><div class="cal-header">금</div><div class="cal-header">토</div>
-                    <div class="cal-day" style="opacity:0.3;">31</div>
-                    <div class="cal-day dot-green">1</div><div class="cal-day dot-green">2</div><div class="cal-day dot-green">3</div><div class="cal-day dot-yellow">4</div><div class="cal-day dot-green">5</div><div class="cal-day dot-green">6</div>
-                    <div class="cal-day dot-green">7</div><div class="cal-day dot-green">8</div><div class="cal-day" id="cal-today" style="border: 1px solid var(--primary-dark); font-weight:700;">9</div>
-                    <div class="cal-day">10</div><div class="cal-day">11</div><div class="cal-day">12</div><div class="cal-day">13</div>
+            <div class="card real-calendar-complete">
+                <div class="real-calendar-head">
+                    <div class="card-title" style="margin-bottom:0;">🗓️ 회복 관리 달력 상태판</div>
                 </div>
+                <div class="real-calendar-note">기록 시 하단에 유기적 점 표시</div>
+                <div class="real-calendar-nav">
+                    <button type="button" class="real-calendar-arrow" onclick="changeCalendarMonth(-1)">‹</button>
+                    <div class="real-calendar-month" id="real-calendar-month"></div>
+                    <button type="button" class="real-calendar-arrow" onclick="changeCalendarMonth(1)">›</button>
+                </div>
+                <div class="real-calendar-weekdays">
+                    <div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div>
+                </div>
+                <div class="real-calendar-days" id="real-calendar-days"></div>
             </div>
 
             <div id="history-box"></div>
 
-            <button type="button" class="app-btn" style="background:#EF4444; margin-top:10px;" onclick="resetLogs()">
+            <button type="button" class="app-btn" id="reset-all-btn" style="background:#EF4444; margin-top:10px; position:relative; z-index:50;">
                 🗑️ 모든 기록 초기화
             </button>
         </section>
@@ -658,84 +1073,276 @@
         }
     }
 
-    // 로컬 스토리지 기반의 스마트 건강 기록 기능
-    function addHealthLog() {
-        const tempVal = document.getElementById('in-temp').value;
-        const statusVal = document.getElementById('in-status').value;
-        const memoVal = document.getElementById('in-memo').value;
-        const currentDate = new Date().toLocaleDateString('ko-KR', {month: 'short', day: 'numeric'});
 
-        if(!tempVal) { alert('아이의 체온을 입력해 주세요.'); return; }
+    let currentFlaccScore = 0;
+    let calendarViewDate = new Date();
 
-        const currentLog = { date: currentDate, temp: tempVal, status: statusVal, memo: memoVal };
-        let currentLogs = JSON.parse(localStorage.getItem('ebv_pro_logs') || '[]');
-        currentLogs.unshift(currentLog);
-        
-        // 데이터는 최근 최대 5개까지만 축적 관리 (과부하 방지)
-        localStorage.setItem('ebv_pro_logs', JSON.stringify(currentLogs.slice(0, 5)));
-        
-        // 오늘 날짜 달력 연동 시각화 효과 부여
-        const todayCal = document.getElementById('cal-today');
-        if(todayCal) {
-            todayCal.className = 'cal-day';
-            if(statusVal === '양호') todayCal.classList.add('dot-green');
-            else if(statusVal === '관찰') todayCal.classList.add('dot-yellow');
-            else todayCal.classList.add('dot-red');
+    const flaccPainData = {
+        0:  { title:'통증 없음', msg:'아이가 편안한 상태예요 😊', bg:'#E7F7EA', color:'#15803D', group:0 },
+        1:  { title:'약한 통증', msg:'약간 불편함이 있어요', bg:'#F7FBEA', color:'#827A0E', group:1 },
+        2:  { title:'약한 통증', msg:'조금 아파하고 있어요', bg:'#F7FBEA', color:'#827A0E', group:1 },
+        3:  { title:'약한 통증', msg:'꽤 아파하고 있어요', bg:'#F7FBEA', color:'#827A0E', group:1 },
+        4:  { title:'보통 통증', msg:'많이 아파하고 있어요', bg:'#FFF3DF', color:'#EA580C', group:4 },
+        5:  { title:'보통 통증', msg:'아주 많이 불편해해요', bg:'#FFF3DF', color:'#EA580C', group:4 },
+        6:  { title:'보통 통증', msg:'굉장히 고통스러워해요', bg:'#FFF3DF', color:'#EA580C', group:4 },
+        7:  { title:'심한 통증', msg:'심하게 아파요 → 진통제 고려', bg:'#FDE7ED', color:'#B91C1C', group:7 },
+        8:  { title:'심한 통증', msg:'매우 심한 통증 → 진통제 필요', bg:'#FDE7ED', color:'#B91C1C', group:7 },
+        9:  { title:'심한 통증', msg:'극심한 통증 → 즉시 처치 필요', bg:'#FDE7ED', color:'#B91C1C', group:7 },
+        10: { title:'극심한 통증', msg:'참을 수 없는 통증 🚨 응급', bg:'#FDE7ED', color:'#B91C1C', group:10 }
+    };
+
+    function flaccScoreColor(score) {
+        if(score === 0) return '#34A853';
+        if(score <= 2) return '#63C16B';
+        if(score === 3) return '#CDE64B';
+        if(score <= 5) return '#F59E0B';
+        if(score === 6) return '#FF6B3A';
+        if(score <= 8) return '#EF4444';
+        return '#C50F1F';
+    }
+
+    function setFlaccPain(score) {
+        currentFlaccScore = score;
+        const info = flaccPainData[score];
+
+        document.querySelectorAll('.flacc-score-btn').forEach((btn, index) => {
+            btn.classList.remove('active');
+            btn.style.background = '#FFFFFF';
+            btn.style.color = '#8B95A1';
+            if(index === score) {
+                btn.classList.add('active');
+                btn.style.background = flaccScoreColor(score);
+                btn.style.color = '#FFFFFF';
+            }
+        });
+
+        document.querySelectorAll('.flacc-face-card').forEach(face => {
+            face.classList.toggle('active', Number(face.dataset.faceGroup) === info.group);
+        });
+
+        const box = document.getElementById('flacc-result-box');
+        const number = document.getElementById('flacc-result-number');
+        const title = document.getElementById('flacc-result-title');
+        const msg = document.getElementById('flacc-result-msg');
+
+        if(box && number && title && msg) {
+            box.style.background = info.bg;
+            number.textContent = score;
+            number.style.color = info.color;
+            title.textContent = info.title;
+            title.style.color = info.color;
+            msg.textContent = info.msg;
+        }
+    }
+
+    function dateKey(dateObj) {
+        return dateObj.getFullYear() + '-' +
+            String(dateObj.getMonth() + 1).padStart(2, '0') + '-' +
+            String(dateObj.getDate()).padStart(2, '0');
+    }
+
+    function renderCalendar() {
+        const monthEl = document.getElementById('real-calendar-month');
+        const daysEl = document.getElementById('real-calendar-days');
+        if(!monthEl || !daysEl) return;
+
+        const year = calendarViewDate.getFullYear();
+        const month = calendarViewDate.getMonth();
+        monthEl.textContent = `${year}년 ${month + 1}월`;
+        daysEl.innerHTML = '';
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const lastDate = new Date(year, month + 1, 0).getDate();
+        const prevLastDate = new Date(year, month, 0).getDate();
+        const today = new Date();
+
+        const logs = JSON.parse(localStorage.getItem('ebv_pro_logs') || '[]');
+        const loggedDates = new Set(logs.map(log => log.fullDate).filter(Boolean));
+
+        for(let i = firstDay - 1; i >= 0; i--) {
+            const cell = document.createElement('div');
+            cell.className = 'real-calendar-day muted';
+            cell.textContent = prevLastDate - i;
+            daysEl.appendChild(cell);
         }
 
+        for(let day = 1; day <= lastDate; day++) {
+            const cell = document.createElement('div');
+            const thisDate = new Date(year, month, day);
+            const key = dateKey(thisDate);
+
+            cell.className = 'real-calendar-day';
+            cell.textContent = day;
+
+            if(year === today.getFullYear() && month === today.getMonth() && day === today.getDate()) {
+                cell.classList.add('today');
+            }
+
+            if(loggedDates.has(key)) {
+                cell.classList.add('has-log');
+            }
+
+            daysEl.appendChild(cell);
+        }
+
+        const totalCells = firstDay + lastDate;
+        const nextCells = (Math.ceil(totalCells / 7) * 7) - totalCells;
+
+        for(let day = 1; day <= nextCells; day++) {
+            const cell = document.createElement('div');
+            cell.className = 'real-calendar-day muted';
+            cell.textContent = day;
+            daysEl.appendChild(cell);
+        }
+    }
+
+    function changeCalendarMonth(diff) {
+        calendarViewDate.setMonth(calendarViewDate.getMonth() + diff);
+        renderCalendar();
+    }
+
+    // 로컬 스토리지 기반의 스마트 건강 기록 기능
+    function addHealthLog() {
+        const tempVal = document.getElementById('in-temp').value.trim();
+        const abdomenVal = document.getElementById('in-abdomen').value.trim();
+        const statusVal = document.getElementById('in-status').value;
+        const memoVal = document.getElementById('in-memo').value.trim();
+        const now = new Date();
+        const currentDate = now.toLocaleDateString('ko-KR', {month: 'short', day: 'numeric'});
+        const currentTime = now.toLocaleTimeString('ko-KR', {hour: '2-digit', minute: '2-digit'});
+
+        // 체온, 복부둘레, 상태, 통증점수, 메모 중 하나라도 있으면 저장
+        const hasAnyInput =
+            tempVal !== '' ||
+            abdomenVal !== '' ||
+            memoVal !== '' ||
+            statusVal !== '' ||
+            currentFlaccScore !== 0;
+
+        if(!hasAnyInput) {
+            alert('체온, 복부둘레, 상태, 통증점수, 메모 중 하나라도 입력해 주세요.');
+            return;
+        }
+
+        const currentLog = {
+            fullDate: dateKey(now),
+            date: currentDate,
+            time: currentTime,
+            temp: tempVal,
+            abdomen: abdomenVal,
+            pain: currentFlaccScore,
+            status: statusVal,
+            memo: memoVal
+        };
+
+        let currentLogs = JSON.parse(localStorage.getItem('ebv_pro_logs') || '[]');
+        currentLogs.unshift(currentLog);
+        localStorage.setItem('ebv_pro_logs', JSON.stringify(currentLogs.slice(0, 20)));
+
         alert('모바일 건강기록 로그 저장이 완료되었습니다.');
+
         document.getElementById('health-form').reset();
+        setFlaccPain(0);
+        document.getElementById('save-log-btn').textContent = '모바일 기기에 기록 저장';
+
         renderLogHistory();
+        renderCalendar();
+    }
+
+    function deleteHealthLog(index) {
+        let currentLogs = JSON.parse(localStorage.getItem('ebv_pro_logs') || '[]');
+        const idx = Number(index);
+
+        if(Number.isNaN(idx) || idx < 0 || idx >= currentLogs.length) return;
+
+        const ok = confirm('이 기록만 삭제할까요?');
+        if(!ok) return;
+
+        currentLogs.splice(idx, 1);
+        localStorage.setItem('ebv_pro_logs', JSON.stringify(currentLogs));
+
+        renderLogHistory();
+        renderCalendar();
+        alert('선택한 기록이 삭제되었습니다.');
     }
 
     // 저장 기록 렌더링 시스템
     function renderLogHistory() {
         const historyContainer = document.getElementById('history-box');
         const storedLogs = JSON.parse(localStorage.getItem('ebv_pro_logs') || '[]');
-        
+
         if(storedLogs.length === 0) {
             historyContainer.innerHTML = '';
             return;
         }
-        
+
         let htmlBuffer = '<div style="font-size:14px; font-weight:700; margin: 20px 0 10px; color:var(--text);"><i class="fa-solid fa-clock-history"></i> 축적된 최근 회복 일지</div>';
-        
-        storedLogs.forEach(item => {
+
+        storedLogs.forEach((item, index) => {
             let borderTheme = item.status === '양호' ? '#22C55E' : (item.status === '관찰' ? '#F59E0B' : '#EF4444');
+            let pain = item.pain ?? 0;
+            let abdomenText = item.abdomen ? ` · 복부둘레 ${item.abdomen}cm` : '';
             htmlBuffer += `
                 <div class="card" style="padding:14px; font-size:12px; margin-bottom:8px; border-left:5px solid ${borderTheme}">
                     <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:6px;">
-                        <span>📅 ${item.date} 일지</span>
+                        <span>📅 ${item.date} ${item.time ? item.time : ''} 일지</span>
                         <span style="color:${borderTheme}">🌡️ ${item.temp}°C [${item.status}]</span>
                     </div>
+                    <div class="history-record-extra" style="color:${flaccScoreColor(Number(pain))};">FLACC ${pain}점${abdomenText}</div>
                     <div style="color:#6B7280; line-height:1.5; word-break:break-all;">${item.memo ? item.memo : '작성된 특이사항 메모 없음'}</div>
+                    <div class="record-action-row">
+                        <button type="button" class="small-action-btn delete-log-btn" data-log-index="${index}">🗑️ 삭제</button>
+                    </div>
                 </div>
             `;
         });
         historyContainer.innerHTML = htmlBuffer;
     }
 
-
     // 저장된 회복 기록 전체 초기화 기능
     function resetLogs() {
         const ok = confirm('저장된 회복기록을 모두 삭제할까요?');
-        if (!ok) return;
+        if(!ok) return;
 
         localStorage.removeItem('ebv_pro_logs');
 
-        const todayCal = document.getElementById('cal-today');
-        if (todayCal) {
-            todayCal.className = 'cal-day';
-            todayCal.style.border = '1px solid var(--primary-dark)';
-            todayCal.style.fontWeight = '700';
-        }
+        const form = document.getElementById('health-form');
+        if(form) form.reset();
+
+        setFlaccPain(0);
+        calendarViewDate = new Date();
 
         renderLogHistory();
+        renderCalendar();
+
         alert('저장된 회복기록이 초기화되었습니다.');
     }
 
-    // 앱 로드 시 히스토리 자동 바인딩
-    window.onload = renderLogHistory;
+    // 앱 로드 시 초기화
+    window.onload = function() {
+        setFlaccPain(0);
+        renderLogHistory();
+        renderCalendar();
+
+        const resetBtn = document.getElementById('reset-all-btn');
+        if(resetBtn) {
+            resetBtn.onclick = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                resetLogs();
+            };
+        }
+
+        document.addEventListener('click', function(e) {
+            const deleteBtn = e.target.closest('.delete-log-btn');
+            if(deleteBtn) {
+                e.preventDefault();
+                e.stopPropagation();
+                deleteHealthLog(deleteBtn.dataset.logIndex);
+            }
+        });
+    };
+
 </script>
 
 </body>
